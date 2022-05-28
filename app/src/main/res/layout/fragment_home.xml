@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="covidModel"
+            type="com.seip.android.mycovidjason.models.CovidModel" />
+    </data>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/countryNameId"
+                    android:hint="Enter the country name">
+
+                </EditText>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/caseTodayId"
+                tools:text="today cases"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`CaseToday :`+String.valueOf(covidModel.todayCases)}">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deathTodayId"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`DeathToday :`+String.valueOf(covidModel.todayDeaths)}">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/recoveryTodayId"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`RecoverToday :`+String.valueOf(covidModel.todayRecovered)}">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/getCasesTodayId"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`TotalCases :`+String.valueOf(covidModel.getCases)}">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/getDeatCasesTodayId"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`TotalDeath :`+String.valueOf(covidModel.getDeaths)}">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/getRecoverdCasesTodayId"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:text="@{`TotalRecover :`+String.valueOf(covidModel.getRecovered)}">
+
+            </TextView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkCountryId"
+                android:text="SelectCountry">
+
+            </Button>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setCountryTv"
+                android:textSize="20dp"
+                android:src="@drawable/ic_launcher_background"
+                android:textStyle="bold"
+                android:text="">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:id="@+id/updateDateId">
+            </TextView>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:setflag="@{covidModel.getCountryInfo().getFlag()}">
+            </ImageView>
+        </LinearLayout>
+
+</layout>
